@@ -1,16 +1,21 @@
 import axios from "axios";
 import Card from "../components/Card";
+import { Flex, Box } from "reflexbox";
 
 export default function Home({movies}) {
 
-  console.log(movies);
 
   return (
-    <div>
+    <Box variant="container">
+      <Box my={10} as="h2">Latest Movies</Box>
+      <Flex justifyContent="space-between" flexWrap='wrap'>
       {movies.map(movie => (
-        <Card key={movie.id} movie={movie.attributes}/>
+        <Box key={movie.id} width={1/3} px="1">
+        <Card  movie={movie.attributes}/>
+        </Box>
       ))}
-    </div>
+      </Flex>
+    </Box>
   );
 }
 
