@@ -44,6 +44,5 @@ const theme = {
   breakpoints,
 };
 
-console.log(breakpoints);
 
 export default theme;
